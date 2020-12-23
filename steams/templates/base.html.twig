@@ -1,0 +1,55 @@
+*<!DOCTYPE html>
+<html>
+    <head>
+	<html lang="fr">
+	<link rel="preconnect" href="https://fonts.gstatic.com/ ">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+ 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+ 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ 	<link rel="manifest" href="/site.webmanifest">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %} 
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    	<link rel="stylesheet" type="text/css" href="/styles/style.css">
+	{% endblock %}
+    </head>
+    <body>
+        {% block navbar %}
+		<div class="main-nav fixed-top">
+                        <nav class="container navbar navbar-expand-lg navbar-light static-top">
+                                <div class="container">
+                                        <a class="navbar-brand" href="/">
+                                                <h4>Le<br>Meilleur<br>Coin</h4>
+                                        </a>
+                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded=">
+                                                <span class="navbar-toggler-icon"></span>"navbar-toggler-icon"nav-link
+                                        </button>
+                                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                                                <ul class="navbar-nav ml-auto">
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="/">ACCUEIL
+                                                                        <span class="sr-only">(current)</span>
+                                                                </a>
+                            </li>
+                            <li class="nav-item">
+                                                                <a class="nav-link" href="/settings">PARAMETRES</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="/profil/{{ name }}/0">PROFIL</a>
+                                                        </li>
+							<li class="nav-item">
+								<a class="nav-link" href="/post">AJOUTER</a>
+							</li>
+                                                </ul>
+                                        </div>
+                                </div>
+                        </nav>
+                </div>
+	{% endblock %}
+        {% block body %}{% endblock %}
+    </body>
+</html>

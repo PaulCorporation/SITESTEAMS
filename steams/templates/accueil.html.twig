@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil{% endblock %}
+{% block body %}
+    <div class="container">
+		{% block navbar %}
+                {{ parent() }}
+        	{% endblock %}
+        <div class="parentAccueil">
+            <!--Partie recherche-->
+            <div class="col-xl-2">
+		        <h2>Recherche:</h2>
+            </div>
+            <div class="col-xl-10">
+                <div class="rectangleText">
+                    <div class="col-md-10">
+                        <!--<div class="heading">
+                            <div class="toolbar_add_message">
+                            </div>
+                        </div>-->
+                    </div>
+                    <!--<form action="/" class="formContainer" method="post" enctype="multipart/form-data">
+                        <textarea name="recherche" placeholder="Entrez ici votre texte" id="texte" class="add-message col-md-10"></textarea>
+                        <div class="input_bg">
+                            <label for="genre"></label>
+                            <select name="genre" id="genre">
+                                <option value="" selected disabled hidden>Genre:</option>
+                                <option value="stratégie">Stratégie</option>
+                                <option value="fps">FPS</option>
+                                <option value="moba">MOBA</option>
+                                <option value="platform">Platform</option>
+                            </select>
+
+                            <input type="submit" value="Soumettre">
+                        </div>    
+                    </form>--> 
+			{{ form_start(form) }}
+                                {{ form_widget(form) }}
+                                <button type="submit" class="btn btn-primary">Soumettre</button>
+                        {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+        <div class="game_container container row">
+            {% for item in jeux %}
+              <div class="game_block col-md-3">
+                 <a href="/game/{{item.getId()}}"><img style="width:15vw; height:375px;" src="{{ item.getImagelink() }}" alt="Banner Rocket League" class="banner"></a>
+              </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+{% endblock %}

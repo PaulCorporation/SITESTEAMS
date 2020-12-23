@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block title %}Post{% endblock %}
+{% block body %}
+    <div class="container">
+	{% block navbar %}
+		{{ parent() }}
+	{% endblock %}
+        <div class="parentAccueil">
+            <div class="col-xl-2">
+                <!--Partie Pub 1?-->
+            </div>
+           <div class="col-xl-10">
+            <div class="rectangleText">
+               <div class="col-md-10">
+                <div class="heading">
+                    <!--Partie Pub 2?-->
+                </div>
+               </div>
+            </div>
+           </div>
+        </div>
+        <div class="game_container container">
+            <div class="parentProfil">
+                <div class="col-xl-4">
+                </div>
+<!--                <div class="col-xl-4">
+                    <div class="rectangleProfil">
+                        <img src='/images/dragonball_banner.jpg' alt='avatar utilisateur' class='carreAvatarProfil'>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <a href="#" class="button">Charger une image</a>
+                </div>
+-->      
+            </div>
+		<div class="profil_game_block">
+                <!--Partie post-->
+                <div class="col-xl-4">
+                    <div class="parametres_block">
+			<a href="/game/{{jeu.getId()}}"><img style="width:15vw; height:375px;" src="{{ jeu.getImagelink() }}" alt="Bannen" class="banner"></a>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <div class="change_content">
+			<h4>{{jeu.getName()}} </h4>
+			<h4>{{ jeu.getDescription() }}</h4>
+			<div><a href=/download/{{ jeu.getId() }}>Télécharger</a> </div>
+			<h4> Type de jeu : {{ jeu.getGenre() }} </h4>
+			{% if owner == true %}
+				<h4><a href="/delete?id={{ jeu.getId() }}">supprimer </a></h4>
+				<h4><a href="/post/edit/{{ jeu.getId() }}">Editer </a></h4>
+			{% endif %}
+			<h4>nombre de téléchargements : {{ download }}</h4>
+			<!--<img src="/images/like.png" style="width:50px; height:50px">-->
+                    </div>
+                </div>  
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+{% endblock %}

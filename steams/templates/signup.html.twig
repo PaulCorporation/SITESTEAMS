@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Login{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="center">
+            <div class="parent row">
+                <div class="LeftRectangleLogin col-md-5">
+                    <h1>Le<br>Meilleur<br>Coin</h1>
+                    <div class="lien">
+                    </div>
+                </div>
+                <div class="RightRectangleLogin col-md-5">
+                    <h2>S'INSCRIRE</h2>
+                    <div class="form-login-container">
+                        {{ form_start(form) }}
+                                {{ form_widget(form) }}
+                                        <button type="submit" class="btn btn-primary">Soumettre</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block navbar %}{% endblock %}

@@ -1,0 +1,55 @@
+ {% extends 'base.html.twig' %}
+{% block title %}Paramètres{% endblock %}
+{% block body %}
+   <div class="container">
+		{% block navbar %}
+                {{ parent() }}
+        	{% endblock %}
+        <div class="parentAccueil">
+            <div class="col-xl-2">
+                <!--Partie Pub 1?-->
+            </div>
+           <div class="col-xl-10">
+            <div class="rectangleText">
+               <div class="col-md-10">
+                <div class="heading">
+                    <!--Partie Pub 2?-->
+                </div>
+               </div>
+            </div>
+           </div>
+        </div>
+        <div class="game_container container">
+            <div class="parentProfil">
+                <div class="col-xl-4">
+                </div>
+                <!--<div class="col-xl-4">
+                    <div class="rectangleProfil">
+                        <img src='/images/avatar.jpg' alt='avatar utilisateur' class='carreAvatarProfil'>
+                    </div>
+                </div>-->
+                <div class="col-xl-4">
+                </div>      
+            </div>
+		<div class="profil_game_block">
+                <!--Partie post-->
+                <div class="col-xl-4">
+                    <div class="parametres_block">
+                        <h2>Pseudo:</h2><br>
+                        <h2>Password:</h2>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <div class="change_content">
+			<form name="settings_form" method="post">
+                                <div id="settings_form"><div><input  maxlength="200" type="text" value="{{ name }}"id="settings_form_name" name="settings_form[name]" placeholder="Pseudo" /></div><div><input  maxlength="200" type="password" id="settings_form_password" name="settings_form[password]" placeholder="Mot de passe" /></div></div>
+                                        <button type="submit" class="btn btn-primary">Soumettre</button>
+                        </form>
+                    </div>
+                </div>  
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+{% block title %}Post{% endblock %}
+{% block body %}
+    <div class="container">
+	{% block navbar %}
+		{{ parent() }}
+	{% endblock %}
+        <div class="parentAccueil">
+            <div class="col-xl-2">
+                <!--Partie Pub 1?-->
+            </div>
+           <div class="col-xl-10">
+            <div class="rectangleText">
+               <div class="col-md-10">
+                <div class="heading">
+                    <!--Partie Pub 2?-->
+                </div>
+               </div>
+            </div>
+           </div>
+        </div>
+        <div class="game_container container">
+            <div class="parentProfil">
+                <div class="col-xl-4">
+                </div>
+<!--                <div class="col-xl-4">
+                    <div class="rectangleProfil">
+                        <img src='/images/dragonball_banner.jpg' alt='avatar utilisateur' class='carreAvatarProfil'>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <a href="#" class="button">Charger une image</a>
+                </div>
+-->      
+            </div>
+		<div class="profil_game_block">
+                <!--Partie post-->
+                <div class="col-xl-4">
+                    <div class="parametres_block">
+			<h2>Nom du jeu :</h2><br>
+                        <h2>Description:</h2><br>
+                        <h2>Lien:</h2><br>
+                        <h2>Lien de l'image:</h2><br>
+			<h2> Genre de jeu : </h2>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <div class="change_content">
+			<form name="jeu_form" method="post">
+				<div id="jeu_form">
+					{% if placeholder_name is defined %}
+					<div>
+                                                <input  maxlength="200" type="text" id="jeu_form_name" name="jeu_form[name]" required="required" value="{{ placeholder_name }}" placeholder="Nom du Jeu" />
+                                        </div>
+					{% else %}
+					 <div>
+                                                <input  maxlength="200" type="text" id="jeu_form_name" name="jeu_form[name]" required="required" placeholder="Nom du Jeu" />
+                                        </div>
+					{% endif %}
+					 {% if placeholder_desc is defined %}
+					<div>
+						<input type="text" id="jeu_form_description" name="jeu_form[description]" required="required" value="{{ placeholder_desc }}" placeholder="Description du jeu" />
+					</div>
+					{% else %}
+					 <div>
+                                                <input type="text" id="jeu_form_description" name="jeu_form[description]" required="required" placeholder="Description du jeu" />
+                                        </div>
+					{% endif %}
+					 {% if placeholder_link is defined %}
+					 <div>
+                                                <input  maxlength="200" type="text" id="jeu_form_link" name="jeu_form[link]" value="{{ placeholder_link }}" required="required" placeholder="Lien de téléchargement du jeu" />
+                                        </div>
+					{% else %}
+					<div>
+						<input  maxlength="200" type="text" id="jeu_form_link" name="jeu_form[link]" required="required" placeholder="Lien de téléchargement du jeu" />
+					</div>
+					{% endif %}
+					{% if placeholder_imagelink is defined %}
+					 <div>
+                                                <input  maxlength="200" type="text" id="jeu_form_imagelink" value="{{ placeholder_imagelink }}" name="jeu_form[imagelink]" required="required" placeholder="Lien de l&#039;image" />
+                                        </div>
+					{% else %}
+					<div>
+						<input  maxlength="200" type="text" id="jeu_form_imagelink" name="jeu_form[imagelink]" required="required" placeholder="Lien de l&#039;image" />
+					</div>
+					{% endif %}
+					{% if placeholder_genre is defined %}
+					<div>
+						<label for="jeu_form_genre" class="required">Genre</label>
+					<select id="jeu_form_genre" name="jeu_form[genre]" required="required"><option value="" selected=""></option>
+					<option value="FPS">FPS</option><option value="Multiplayers">Multiplayers</option><option value="Action">Action</option><option value="Aventure">Aventure</option><option value="Combat">Combat</option><option value="Beat Them All">Beet Them All</option><option value="Tir">Tir</option><option value="Shoot Them Up">Shoot Them Up</option><option value="Jeu De Rôle">Jeu De Rôle</option><option value="Réflexion">Réflexion</option><option value="Puzzle">Puzzle</option><option value="Rythme">Rythme</option><option value="Stratégie">Stratégie</option><option value="Simulation">Simulation</option><option value="Hack&#039;n slash">Hackn&#039;s slash</option><option value="Labyrinthe">Labyrinthe</option><option value="Visual novel">Visual Novel</option><option value="Infiltration">Infiltration</option><option value="Rail Shooter">Rail Shooter</option><option value="Plateforme">Plateforme</option><option value="Tir en vue subjective">Tir en vue subjective</option></select></div></div>
+					{% else %}
+					<div>
+						<label for="jeu_form_genre" class="required">Genre</label>
+					<select id="jeu_form_genre" name="jeu_form[genre]" required="required"><option value="" selected="selected"></option>
+					<option value="FPS">FPS</option><option value="Multiplayers">Multiplayers</option><option value="Action">Action</option><option value="Aventure">Aventure</option><option value="Combat">Combat</option><option value="Beat Them All">Beet Them All</option><option value="Tir">Tir</option><option value="Shoot Them Up">Shoot Them Up</option><option value="Jeu De Rôle">Jeu De Rôle</option><option value="Réflexion">Réflexion</option><option value="Puzzle">Puzzle</option><option value="Rythme">Rythme</option><option value="Stratégie">Stratégie</option><option value="Simulation">Simulation</option><option value="Hack&#039;n slash">Hackn&#039;s slash</option><option value="Labyrinthe">Labyrinthe</option><option value="Visual novel">Visual Novel</option><option value="Infiltration">Infiltration</option><option value="Rail Shooter">Rail Shooter</option><option value="Plateforme">Plateforme</option><option value="Tir en vue subjective">Tir en vue subjective</option></select></div></div>
+					{% endif %}
+				<button type="submit" class="btn btn-primary">Soumettre</button>
+			</form>
+                    </div>
+                </div>  
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/script.js"></script>
+{% endblock %}

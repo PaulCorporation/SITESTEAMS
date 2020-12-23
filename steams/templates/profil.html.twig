@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block title %}Profil{% endblock %}
+{% block body %}
+    <div class="container">
+                {% block navbar %}
+                {{ parent() }}
+                {% endblock %}
+        <div class="parentAccueil">
+            <div class="col-xl-2">
+                <!--Partie Pub 1?-->
+            </div>
+           <div class="col-xl-10">
+            <div class="rectangleText">
+               <div class="col-md-10">
+                <div class="heading">
+                    <!--Partie Pub 2?-->
+                </div>
+               </div>
+            </div>
+           </div>
+        </div>
+        <div class="game_container container row">
+            <div class="parentProfil">
+                <div class="col-xl-4">
+                    <div class="rectangleProfil">
+                        <div>
+                            <h2>Pseudo:</h2>
+                            <h4>{{ profilename }}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="rectangleProfil">
+                        <div class="texte">
+                            <h2>Mes Posts:</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="rectangleProfil">
+                        <div>
+                            <h2>Posts ajoutés:</h2>
+                            <h4>{{ count }}</h4>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!--<div class="profil_game_block">-->
+                <!--Partie post-->
+			     {% for item in jeux %}
+                                 <div class="game_block col-md-3">
+                                      <a href="/game/{{ item.getId() }}"><img style="width:15vw; height:375px;" src="{{ item.getImagelink() }}" alt="Banner" class="banner">
+                                </div>
+                            {% endfor %}
+    </div>
+	<h4>{% for link in 0..(count/8) %}
+            <a href=/profil/{{name}}/{{link}}>{{link}}</a>, 
+        {% endfor %}</h4>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossori>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="a>
+        <script src="js/script.js"></script>
+{% endblock %}
